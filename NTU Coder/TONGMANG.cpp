@@ -1,6 +1,6 @@
 /**
  *    Author:  Akira
- *    Created: 09.06.2023 13:53:34
+ *    Created: 15.06.2023 20:59:30
 **/
 #include <bits/stdc++.h>
 #define all(x) x.begin(), x.end()
@@ -21,28 +21,25 @@ const ll MOD = 1e9 + 7;
 const ll MOD2 = 1e9 + 9;
 const ldb EPS = 1e-6;
 void solve() {
-	ll n; cin >> n;
-	ll sum = 0;
-	int a[n];
-	vector<int> b;
-	for(int &x : a) cin >> x;
-	b.pb(a[0]);
-	for(int i = 1, tmp = 2; i <= n; i++) {
-		sum += b[i - 1]; // Tong truoc a[i]
-		ll x = tmp * a[i] - sum; // VD: (15 + x) / 2 == 20 --> x = 25 (KQ) Trong do x la so can tim de ra duoc trung binh cong
-		if((sum + x) / tmp == a[i]) {
-			b.pb(x);
+	ll x, sum = 0;
+	vector<ll> v;
+	while(cin >> x) {
+		v.pb(x);
+		sum += x;
+	}
+	ll tmp = 0;
+	for(ll i = 0; i < sz(v); i++) {
+		if(v[i] == sz(v) - 1) {
+			tmp = v[i];
+			break;
 		}
-		++tmp;
 	}
-	for(int i = 0; i < n; i++) {
-		cout << b[i] << " ";
-	}
-	
-
+	cout << sum - tmp;
 }
 
 int main() {
+	//freopen("ahihi.inp", "r", stdin);
+	//freopen("ahihi.out", "w", stdout);
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 	solve();

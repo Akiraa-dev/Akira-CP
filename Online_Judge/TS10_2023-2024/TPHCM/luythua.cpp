@@ -31,7 +31,7 @@ ll binpow(ll a, ll n) {
 }
 void solve() {
 	ll n; cin >> n;
-	ll restrict = 0;
+	ll res = 0;
 	int num[n];
 	int exponent[n];
 	for(int i = 0; i < n; i++) {
@@ -42,14 +42,14 @@ void solve() {
 		num[i] = (num[i] - (num[i] % 10)) / 10;
 	}
 	for(int i = 0; i < n; i++) {
-		restrict += round(pow(num[i], exponent[i]));
+		res += binpow(num[i], exponent[i]);
 	}
-	cout << restrict;
+	cout << res;
 }
 
 int main() {
-	freopen("LUYTHUA.INP", "r", stdin);
-	freopen("LUYTHUA.OUT", "w", stdout);
+	//freopen("LUYTHUA.INP", "r", stdin);
+	//freopen("LUYTHUA.OUT", "w", stdout);
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 	solve();

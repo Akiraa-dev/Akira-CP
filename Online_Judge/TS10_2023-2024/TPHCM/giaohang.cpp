@@ -36,14 +36,14 @@ void solve() {
 	ll l = a[0].fi;
 	ll r = a[0].se;
 	ll ans = m;
-	for(auto [x, y] : a) {
-		if(x <= r) {
-			r = max(r, y);
-		}	
+	for(int i = 0; i < sz(a); i++) {
+		if(a[i].fi <= r) {
+			r = max(r, a[i].se);
+		}
 		else {
 			ans += 2 * (r - l);
-			l = x;
-			r = y;
+			l = a[i].fi;
+			r = a[i].se;
 		}
 	}
 	ans += 2 * (r - l);
@@ -51,8 +51,8 @@ void solve() {
 }
 
 int main() {
-	freopen("GIAOHANG.INP", "r", stdin);
-	freopen("GIAOHANG.OUT", "w", stdout);
+	//freopen("GIAOHANG.INP", "r", stdin);                                                                                                
+	//freopen("GIAOHANG.OUT", "w", stdout);
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 	solve();

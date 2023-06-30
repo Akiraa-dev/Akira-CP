@@ -1,6 +1,6 @@
 /**
  *    author:  akira
- *    created: 19/06/2023 14:33:02
+ *    created: 18/06/2023 13:44:49
 **/
 #include <bits/stdc++.h>
 using namespace std;
@@ -30,29 +30,42 @@ ll lcm(ll a, ll b) { return a / gcd(a, b) * b; }
                                 
 /**--------PROBLEM SOLVING--------**/
 void solve() {
-	int n, l; cin >> n >> l;
-	int w[100001], h[100001], dp[100001], m;
+	ll n, m; cin >> n >> m;
+	ll a[n], b[m], idxA[n], idxB[m];
+	vector<ll> ans;
 	for(int i = 1; i <= n; i++) {
-	    cin >> h[i] >> w[i];
+		cin >> a[i];
+		idxA[i] = a[i];
 	}
+	for(int i = 1; i <= m; i++) {
+		cin >> b[i];
+		idxB[i] = b[i];
+	}
+	sort(a + 1, a + n + 1);
+	sort(b + 1, b + m + 1);
+	ll l = 1, r = 1;
+	while(l <= n && r <= m) {
+		if(a[l] <= b[r]) {
+			ans.pb(a[l]);
+			++l;
+		}
+		else {
+			ans.pb(b[r]);
+			++r;
+		}
+	}
+	for(; l <= n; l++) ans.pb(a[l]);
+	for(; r <= m; r++) ans.pb(b[r]);
 	for(int i = 1; i <= n; i++) {
-	    w[i] += w[i - 1];
+		cout << lower_bound(all(ans), idxA[i]) - ans.begin() + 1 << " ";
 	}
-	dp[0] = 0;
-	for(int i = 1; i <= n; i++) {
-	    dp[i] = 1000000001;
-	    m = h[i];
-	    for(int j = i - 1; j >= 0; j--) {
-	        if(w[i] - w[j] > l) {
-	            break;
-	        }
-	        dp[i] = min(dp[i], dp[j] + m);
-	        m = max(m, h[j]);
-	    }
+	cout << endl;
+	for(int i = 1; i <= m; i++) {
+		cout << lower_bound(all(ans), idxB[i]) - ans.begin() + 1 << " ";
 	}
-	cout << dp[n];
-}
 
+}
+                                    
 /**------------NOTES-------------
 		 [Qanh 30 04 2007]
     --------------------------**/
