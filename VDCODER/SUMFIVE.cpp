@@ -1,49 +1,57 @@
 /**
  *    author:  akira
- *    created: 20/06/2023 13:13:41
+ *    created: 04/07/2023 21:58:43
 **/
 #include <bits/stdc++.h>
 using namespace std;
 
-/**--------MACROS--------**/
+/** --------MACROS-------- **/
 #define all(x) x.begin(), x.end()
 #define sz(x) (int)x.size()
+#define endl '\n'
 #define pb push_back
+#define pf push_front
+#define cint(x) int(x - '0')
 #define fi first
 #define se second
 #define llll pair<long long, long long>
+#define pii pair<int, int>
 
 typedef long long ll;
 typedef long double ldb;
 typedef unsigned long long ull;
 
-const ldb PI = 3.14159265358979323846264338327950288419716939937510582097494459230;
+const ldb PI = 3.1415926535897932384626433832795028841971693993751058209749445923;
 const ll INF = 1e18;
 const ll MOD = 1e9 + 7;
 const ll MOD2 = 1e9 + 9;
 const ldb EPS = 1e-6;
 
-/**--------BASIC FUNCTIONS--------**/
+/** --------BASIC FUNCTIONS-------- **/
 ll binpow(ll a, ll n) { int res = 1; while(n) { if(n & 1) {res *= a;} a *= a; n >>= 1; } return res; }
 ll gcd(ll a, ll b) { if(b == 0) return a; return gcd(b, a % b); }
 ll lcm(ll a, ll b) { return a / gcd(a, b) * b; }
                                 
-/**--------PROBLEM SOLVING--------**/
+/** --------PROBLEM SOLVING-------- **/
 void solve() {
 	int n; cin >> n;
-	for(int i = 0; i < (1 << n); i++) {
-		for(int j = n - 1; j >= 0; j--) {
-			cout << ((i >> j) & 1);
-		}
-		cout << '\n';
+	ll a[n];
+	ll sum = 0;
+	for(int i = 0; i < n; i++) {
+		cin >> a[i];
 	}
+	sort(a, a + n);
+	for(int i = n - 5; i < n; i++) {
+		sum += a[i];
+	}
+	cout << sum;
 }
 
-/**------------NOTES-------------
-		 [Qanh 30 04 2007]
-    --------------------------**/
+/** ------------NOTES-------------
 
-/**--------MAIN FUNCTION--------**/
+    -------------------------- **/
+
+/** --------MAIN FUNCTION-------- **/
 int main() {
 	//freopen(".INP", "r", stdin);
 	//freopen(".OUT", "w", stdout);
