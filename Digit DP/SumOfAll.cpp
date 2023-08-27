@@ -13,8 +13,7 @@
 typedef long long ll;
 typedef long double ldb;
 using namespace std;
-/**------Ideas---------
----------------------**/
+
 const ldb PI = 3.14159265358979323846264338327950288419716939937510582097494459230;
 const ll INF = 1e18;
 const ll MOD = 1e9 + 7;
@@ -41,21 +40,24 @@ ll digitsum(int idx, int sum, int tight, vector<int> &digit) {
 }
 int rangedigitsum(int a, int b) {
 	memset(dp, -1, sizeof(dp));
-	                
+
 	vector<int> digitA;
 	getdigits(a - 1, digitA);
 	ll ans1 = digitsum(digitA.size() - 1, 0, 1, digitA);
-	
-	vector<int> digitB;
+
+   vector<int> digitB;
 	getdigits(b, digitB);
 	ll ans2 = digitsum(digitB.size() - 1, 0, 1, digitB);
-	
+
 	return (ans2 - ans1);
 }
 int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
-	ll a, b; cin >> a >> b;
-	cout << rangedigitsum(a, b) << endl;
+	ll a, b;
+	while(cin >> a >> b) {
+        if(a == -1 && b == -1) return 0;
+        cout << rangedigitsum(a, b) << endl;
+	}
 	return 0;
 }

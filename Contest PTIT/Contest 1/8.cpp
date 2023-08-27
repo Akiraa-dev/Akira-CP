@@ -1,7 +1,4 @@
-/**
- *    Author:  Akira (アキラ)
- *    Created: 04/06/2023 00:35:14
-**/
+
 #include <bits/stdc++.h>
 #pragma GCC optimize("Ofast,unroll-loops") 
 #define all(x) x.begin(), x.end()

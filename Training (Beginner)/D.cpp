@@ -8,12 +8,6 @@ typedef long double ldb;
 typedef unsigned long long ull;
 using namespace std;
 
-const ldb PI = 3.1415926535897932384626433832795;
-const ll INF = 1000000000000000000;
-const ll MOD = 1000000007;
-const ll MOD2 = 1000000009;
-const ldb EPS = 1e-6;
-
 // Problem D
 const ll MAX = 10000000;
 bool sieve[MAX + 1];

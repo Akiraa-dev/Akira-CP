@@ -7,7 +7,7 @@
 #define fi first
 #define se second
 #define gcd(x, y) __gcd(x, y)
-#define lcm(x, y) x / __gcd(x, y) * y
+#define lcm(x, y) (x / __gcd(x, y) * y)
 typedef long long ll;
 typedef long double ldb;
 typedef unsigned long long ull;

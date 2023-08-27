@@ -41,7 +41,6 @@ void solve() {
 		sum += tmp;
 	}
 	sort(all(v));
-
 	for(int i = sz(v) - 3; i >= 0; i -= 3) {
 		sum -= v[i];
 	}

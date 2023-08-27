@@ -20,6 +20,7 @@ const ll INF = 1e18;
 const ll MOD = 1e9 + 7;
 const ll MOD2 = 1e9 + 9;
 const ldb EPS = 1e-6;
+
 void solve() {
 	int t; cin >> t;
 	while(t--) {

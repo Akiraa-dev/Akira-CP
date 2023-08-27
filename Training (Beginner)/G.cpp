@@ -8,12 +8,6 @@ typedef long double ldb;
 typedef unsigned long long ull;
 using namespace std;
 
-const ldb PI = 3.14159265358979323846264338327950288419716939937510582097494459230;
-const ll INF = 1000000000000000000;
-const ll MOD = 1000000007;
-const ll MOD2 = 1000000009;
-const ldb EPS = 1e-6;
-
 // Problem G
 string cut(string &x) {
     for(int i = 0; i < x.size(); i++) {

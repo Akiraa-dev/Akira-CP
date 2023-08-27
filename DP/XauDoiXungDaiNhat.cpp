@@ -1,4 +1,3 @@
-// author: akira (アキラ)
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -30,7 +29,7 @@ ll lcm(ll a, ll b) { return a / gcd(a, b) * b; }
 /** --------PROBLEM SOLVING-------- **/
 void solve() {
 	string s; cin >> s;
-	s = "x" + s;
+	s = " " + s;
 	bool dp[sz(s) + 1][sz(s) + 1];
 	memset(dp, false, sizeof(dp));
 	for(int i = 1; i <= sz(s); i++) {

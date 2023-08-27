@@ -3,8 +3,7 @@
  *    Created: 14.06.2023 14:13:28
 **/
 #include <bits/stdc++.h>
-#define all(x) x.begin(), x.end()
-#define sz(x) (int)x.size()
+#define all(x) x.begin(), x.end() 
 #define pb push_back
 #define fi first
 #define se second
@@ -20,6 +19,8 @@ const ll INF = 1e18;
 const ll MOD = 1e9 + 7;
 const ll MOD2 = 1e9 + 9;
 const ldb EPS = 1e-6;
+
+#define sz(x) (int)x.size()
 void solve() {
 	int t; cin >> t;
 	while(t--) {

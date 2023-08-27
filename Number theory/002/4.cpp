@@ -27,12 +27,16 @@ ll pow(ll a, ll b) { // a^b (a mu b)
 	return x * x * a;            // b le => a^b/2 x a^b/2 x a
 }
 void solve() {
-	
+	int a, b; cin >> a >> b;
+	cout << pow(a, b) << '\n';
 }
+
 
 int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
-	solve();
+
+	int t; cin >> t;
+	while(t--) solve();
 	return 0;
 }

@@ -21,6 +21,7 @@ const ll INF = 1e18;
 const ll MOD = 1e9 + 7;
 const ll MOD2 = 1e9 + 9;
 const ldb EPS = 1e-6;
+
 ll euler(ll x) {
 	ll res = x;
 	for(int i = 2; i <= sqrt(x); i++) {

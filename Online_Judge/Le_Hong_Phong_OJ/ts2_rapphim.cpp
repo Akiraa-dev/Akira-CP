@@ -49,10 +49,6 @@ void solve() {
 	}
 }
 
-/**------------NOTES-------------
-		 [Qanh 30 04 2007]
-    --------------------------**/
-
 /**--------MAIN FUNCTION--------**/
 int main() {
 	freopen("rapphim.INP", "r", stdin);
